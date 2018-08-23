@@ -49,7 +49,7 @@ export default class App extends Component<Props> {
     this.readFile();
 
     AppState.addEventListener('change', (state) => {
-      if (state === 'active' && new Date().getTime() - this.lastAuthTime > 60000) {
+      if (state === 'active' && new Date().getTime() - this.lastAuthTime > 600000) {
         this.setState({showFingerprintScan: true});
       } else {
         this.lastAuthTime = new Date().getTime();
@@ -75,6 +75,7 @@ export default class App extends Component<Props> {
               return RNFS.readFile(res.path, 'utf8');
           })
           .then((contents) => {
+              console.log(contents);
               list = JSON.parse(contents);
               this.setState({});
           })
@@ -116,8 +117,8 @@ export default class App extends Component<Props> {
           key: str.trim(),
           ctime: new Date().getTime()
       })
-      this.writeFile();
     }
+    this.writeFile();
     this.setState({onEditing: false});
   }
 
