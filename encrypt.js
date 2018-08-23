@@ -18,6 +18,5 @@ export default (str) => {
   if (str[0] === '_') {
     res = res.substr(0, specialTokenPos) + '_' + res.substr(specialTokenPos + 1)
   }
-  console.log('text...');
   return res
 }
