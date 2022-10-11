@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "react": "16.3.1",
-    "react-native": "0.55.4",
+    "react-native": "0.70.2",
     "react-native-fingerprint-scanner": "^2.3.2",
     "react-native-fs": "^2.10.14",
     "react-native-md5": "^1.0.0"
